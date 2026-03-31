@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const links = [
@@ -20,7 +21,7 @@ export default function Nav() {
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: "1.5rem 2.5rem",
+        padding: "0.5rem 2.5rem",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -41,7 +42,13 @@ export default function Nav() {
           letterSpacing: "-0.02em",
         }}
       >
-        Your Name
+        <Image
+          src="/logo.png"
+          alt="Katherine Rush"
+          width={80}
+          height={20}
+          style={{ objectFit: "contain" }}
+        />
       </Link>
 
       {/* Links */}

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
@@ -50,6 +51,26 @@ export default function Home() {
 
       {/* Main hero content */}
       <div style={{ maxWidth: "900px" }}>
+        {/* Photo */}
+        <div
+          style={{
+            width: "160px",
+            height: "160px",
+            borderRadius: "50%",
+            overflow: "hidden",
+            marginBottom: "2rem",
+            opacity: 0,
+            animation: "fadeUp 0.6s ease forwards 0s",
+          }}
+        >
+          <Image
+            src="/pfp.png"
+            alt="pfp"
+            width={80}
+            height={80}
+            style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          />
+        </div>
         {/* Eyebrow */}
         <p
           style={{
@@ -74,7 +95,7 @@ export default function Home() {
             fontWeight: 400,
             lineHeight: 1.05,
             letterSpacing: "-0.03em",
-            color: "var(--ink)",
+            color: "var(--muted)",
             marginBottom: "2rem",
             opacity: 0,
             animation: "fadeUp 0.7s ease forwards 0.2s",
@@ -103,7 +124,7 @@ export default function Home() {
           style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "1.1rem",
-            color: "var(--muted)",
+            color: "var(--rust)",
             maxWidth: "500px",
             lineHeight: 1.7,
             fontWeight: 300,
@@ -130,8 +151,9 @@ export default function Home() {
             style={{
               display: "inline-block",
               padding: "0.75rem 1.75rem",
-              backgroundColor: "var(--ink)",
+              backgroundColor: "var(--rust)",
               color: "var(--cream)",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
               fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.875rem",
               fontWeight: 500,
@@ -140,10 +162,10 @@ export default function Home() {
               transition: "background-color 0.2s ease",
             }}
             onMouseOver={(e) =>
-              ((e.target as HTMLElement).style.backgroundColor = "var(--rust)")
+              ((e.target as HTMLElement).style.backgroundColor = "var(--muted)")
             }
             onMouseOut={(e) =>
-              ((e.target as HTMLElement).style.backgroundColor = "var(--ink)")
+              ((e.target as HTMLElement).style.backgroundColor = "var(--rust)")
             }
           >
             View Projects
@@ -154,7 +176,8 @@ export default function Home() {
               display: "inline-block",
               padding: "0.75rem 1.75rem",
               border: "1px solid var(--border)",
-              color: "var(--ink)",
+              color: "var(--rust)",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
               fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.875rem",
               fontWeight: 400,
@@ -168,7 +191,7 @@ export default function Home() {
             }}
             onMouseOut={(e) => {
               (e.target as HTMLElement).style.borderColor = "var(--border)";
-              (e.target as HTMLElement).style.color = "var(--ink)";
+              (e.target as HTMLElement).style.color = "var(--rust)";
             }}
           >
             About Me
