@@ -82,10 +82,9 @@ export default function Home() {
         >
           Hi, I&apos;m{" "}
           <em style={{ fontStyle: "italic", color: "var(--rust)" }}>
-            Your Name
+            Katherine Rush
           </em>
           .
-          <br />I build things for the web.
         </h1>
 
         {/* Divider line */}
@@ -113,8 +112,7 @@ export default function Home() {
             animation: "fadeUp 0.7s ease forwards 0.5s",
           }}
         >
-          Full-stack developer with a background in Rails, learning React and
-          Next.js. I like making fast, clean, useful software.
+          Full-stack developer with a background in Rails. I like building useful things with clean visuals.
         </p>
 
         {/* CTAs */}
