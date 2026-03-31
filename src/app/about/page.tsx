@@ -1,4 +1,5 @@
 "use client";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 // ─── EDIT THIS SECTION ────────────────────────────────────────────────────────
 const ABOUT = {
@@ -13,12 +14,12 @@ const ABOUT = {
   skills: [
     { category: "Languages", items: ["Ruby", "JavaScript", "TypeScript", "HTML", "CSS"] },
     { category: "Frameworks", items: ["Ruby on Rails", "React", "Next.js", "Tailwind"] },
-    { category: "Tools", items: ["Git", "PostgreSQL", "Vercel", "Figma"] },
+    { category: "Tools", items: ["Git", "PostgreSQL", "Vercel", "Figma", "Adobe Illustrator", "Adobe Photoshop"] },
   ],
   links: [
     { label: "GitHub", url: "https://github.com/krushy8" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/krushy8/" },
-    { label: "Email", url: "rushkatheriney@gmail.com" },
+    { label: "Email", url: "mailto:rushkatheriney@gmail.com" },
   ],
 };
 // ──────────────────────────────────────────────────────────────────────────────
@@ -112,6 +113,9 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
                   fontFamily: "'DM Mono', monospace",
                   fontSize: "0.75rem",
                   color: "var(--muted)",
@@ -122,15 +126,18 @@ export default function About() {
                   transition: "color 0.2s ease, border-color 0.2s ease",
                 }}
                 onMouseOver={(e) => {
-                  (e.target as HTMLElement).style.color = "var(--rust)";
-                  (e.target as HTMLElement).style.borderColor = "var(--rust)";
+                  (e.currentTarget as HTMLElement).style.color = "var(--rust)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--rust)";
                 }}
                 onMouseOut={(e) => {
-                  (e.target as HTMLElement).style.color = "var(--muted)";
-                  (e.target as HTMLElement).style.borderColor = "var(--border)";
+                  (e.currentTarget as HTMLElement).style.color = "var(--muted)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
                 }}
               >
-                {label} ↗
+                {label === "GitHub" && <Github size={14} />}
+                {label === "LinkedIn" && <Linkedin size={14} />}
+                {label === "Email" && <Mail size={14} />}
+                {label}
               </a>
             ))}
           </div>
