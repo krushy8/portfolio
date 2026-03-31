@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 
 // ─── EDIT THIS SECTION ────────────────────────────────────────────────────────
 const PROJECTS = [
@@ -9,10 +9,11 @@ const PROJECTS = [
     title: "Forkcast",
     description:
       "A meal planning web app designed to make weekly cooking simple and stress-free.",
-    tags: ["Rails", "Hotwire", "Ajax", "SweetAlert", "SortableJS", "Figma" ],
+    tags: ["Rails", "Hotwire", "Ajax", "SweetAlert", "SortableJS", "Figma"],
     year: "2026",
     url: "https://github.com/cledx/Forkcast",
     live: "https://www.reciplan.org/",
+    image: "/forkcast.png",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const PROJECTS = [
     year: "2026",
     url: "https://github.com/cledx/A_n_D",
     live: "https://a-n-d-6c853770e414.herokuapp.com/",
+    image: "/and.png",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ const PROJECTS = [
     year: "2026",
     url: "https://github.com/krushy8/devtype",
     live: "https://devtype-sand.vercel.app/",
+    image: "/devtype.png", //
   },
 ];
 // ──────────────────────────────────────────────────────────────────────────────
@@ -79,11 +82,7 @@ export default function Projects() {
       </h1>
 
       {/* Project list */}
-      <div
-        style={{
-          borderTop: "1px solid var(--border)",
-        }}
-      >
+      <div style={{ borderTop: "1px solid var(--border)" }}>
         {PROJECTS.map((project, index) => (
           <div
             key={project.id}
@@ -120,18 +119,61 @@ export default function Projects() {
 
             {/* Content */}
             <div>
+              {/* Screenshot */}
+              {project.image && (
+                <div
+                  style={{
+                    width: "100%",
+                    height: "320px",
+                    overflow: "hidden",
+                    marginBottom: "1.25rem",
+                    border: "1px solid var(--border)",
+                  }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={600}
+                    height={200}
+                    style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                  />
+                </div>
+              )}
+
+              {/* Title — clickable if live URL exists */}
               <h2
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontSize: "1.6rem",
                   fontWeight: 400,
-                  color: "var(--rust)",
                   marginBottom: "0.75rem",
                   letterSpacing: "-0.02em",
                 }}
               >
-                {project.title}
+                {project.live ? (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "var(--rust)",
+                      textDecoration: "none",
+                      transition: "opacity 0.2s ease",
+                    }}
+                    onMouseOver={(e) =>
+                      ((e.currentTarget as HTMLElement).style.opacity = "0.7")
+                    }
+                    onMouseOut={(e) =>
+                      ((e.currentTarget as HTMLElement).style.opacity = "1")
+                    }
+                  >
+                    {project.title}
+                  </a>
+                ) : (
+                  <span style={{ color: "var(--rust)" }}>{project.title}</span>
+                )}
               </h2>
+
               <p
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
