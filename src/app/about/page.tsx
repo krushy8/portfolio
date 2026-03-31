@@ -2,23 +2,23 @@
 
 // ─── EDIT THIS SECTION ────────────────────────────────────────────────────────
 const ABOUT = {
-  name: "Your Name",
+  name: "Katherine Rush",
   role: "Full-Stack Developer",
-  location: "Your City, Country",
+  location: "Tokyo, Japan",
   bio: [
-    "I'm a developer with a background in Ruby on Rails, currently expanding into React and Next.js. I enjoy building things that are fast, clean, and actually useful.",
-    "Before coding, I studied [your background]. These days I spend most of my time working on [what you work on] and learning everything I can about modern web development.",
-    "When I'm not at my desk, you'll find me [your hobbies].",
+    "I'm a developer with a background in Ruby on Rails. I enjoy building things that are fast, clean, and actually useful.",
+    "Before coding, I studied Graphic Design. These days I spend most of my time working on projects useful in Japan and learning everything I can about modern web development.",
+    "When I'm not at my desk, you'll find me cooking, running, and taking care of my plants.",
   ],
   skills: [
     { category: "Languages", items: ["Ruby", "JavaScript", "TypeScript", "HTML", "CSS"] },
-    { category: "Frameworks", items: ["Ruby on Rails", "React", "Next.js"] },
+    { category: "Frameworks", items: ["Ruby on Rails", "React", "Next.js", "Tailwind"] },
     { category: "Tools", items: ["Git", "PostgreSQL", "Vercel", "Figma"] },
   ],
   links: [
-    { label: "GitHub", url: "https://github.com/yourusername" },
-    { label: "LinkedIn", url: "https://linkedin.com/in/yourusername" },
-    { label: "Email", url: "mailto:you@email.com" },
+    { label: "GitHub", url: "https://github.com/krushy8" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/krushy8/" },
+    { label: "Email", url: "rushkatheriney@gmail.com" },
   ],
 };
 // ──────────────────────────────────────────────────────────────────────────────
