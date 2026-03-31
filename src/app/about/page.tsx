@@ -56,7 +56,7 @@ export default function About() {
           fontWeight: 400,
           lineHeight: 1.1,
           letterSpacing: "-0.03em",
-          color: "var(--ink)",
+          color: "var(--rust)",
           marginBottom: "3rem",
         }}
       >
@@ -94,7 +94,7 @@ export default function About() {
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1rem",
-                color: "var(--ink)",
+                color: "var(--rust)",
                 lineHeight: 1.8,
                 fontWeight: 300,
                 marginBottom: "1.25rem",
