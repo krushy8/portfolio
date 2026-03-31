@@ -6,33 +6,33 @@ import Link from "next/link";
 const PROJECTS = [
   {
     id: 1,
-    title: "Project One",
+    title: "Forkcast",
     description:
-      "A brief description of what this project does, the problem it solves, and what you learned building it.",
-    tags: ["Rails", "PostgreSQL", "Tailwind"],
-    year: "2024",
-    url: "https://github.com/yourusername/project-one",
-    live: "https://your-project.com",
+      "A meal planning web app designed to make weekly cooking simple and stress-free.",
+    tags: ["Rails", "Hotwire", "Ajax", "SweetAlert", "SortableJS", "Figma" ],
+    year: "2026",
+    url: "https://github.com/cledx/Forkcast",
+    live: "https://www.reciplan.org/",
   },
   {
     id: 2,
-    title: "Project Two",
+    title: "A&D",
     description:
-      "Another project description. Focus on impact — what did it do, who used it, what was interesting about it?",
-    tags: ["Next.js", "React", "Vercel"],
-    year: "2024",
-    url: "https://github.com/yourusername/project-two",
-    live: null,
+      "A fun, decision-based role-playing game, where you can create your own character and story or leave it up to AI to take you on a journey.",
+    tags: ["Rails", "Stimulus JS", "Heroku", "PostgreSQL", "Bootstrap", "Figma"],
+    year: "2026",
+    url: "https://github.com/cledx/A_n_D",
+    live: "https://a-n-d-6c853770e414.herokuapp.com/",
   },
   {
     id: 3,
-    title: "Project Three",
+    title: "devtype",
     description:
-      "Keep adding projects here. Replace these placeholder entries with your real work as you build it.",
-    tags: ["JavaScript", "API", "CSS"],
-    year: "2023",
-    url: "https://github.com/yourusername/project-three",
-    live: null,
+      "A developer-focused typing speed test. Choose a language, type real code snippets, and track your WPM, CPM, and accuracy.",
+    tags: ["React", "Typescript", "Tailwind", "Vite"],
+    year: "2026",
+    url: "https://github.com/krushy8/devtype",
+    live: "https://devtype-sand.vercel.app/",
   },
 ];
 // ──────────────────────────────────────────────────────────────────────────────
@@ -69,7 +69,7 @@ export default function Projects() {
           fontWeight: 400,
           lineHeight: 1.1,
           letterSpacing: "-0.03em",
-          color: "var(--ink)",
+          color: "var(--muted)",
           marginBottom: "3rem",
         }}
       >
@@ -125,7 +125,7 @@ export default function Projects() {
                   fontFamily: "'Playfair Display', serif",
                   fontSize: "1.6rem",
                   fontWeight: 400,
-                  color: "var(--ink)",
+                  color: "var(--rust)",
                   marginBottom: "0.75rem",
                   letterSpacing: "-0.02em",
                 }}
@@ -246,7 +246,7 @@ export default function Projects() {
       >
         More on{" "}
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/krushy8"
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: "var(--rust)", textDecoration: "none" }}
