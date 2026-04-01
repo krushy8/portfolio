@@ -45,7 +45,7 @@ export default function Nav() {
         <Image
           src="/logo.png"
           alt="Katherine Rush"
-          width={80}
+          width={40}
           height={20}
           style={{ objectFit: "contain" }}
         />
