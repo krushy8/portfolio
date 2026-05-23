@@ -63,13 +63,9 @@ export default function Home() {
             animation: "fadeUp 0.6s ease forwards 0s",
           }}
         >
-          <Image
+          <img
             src="/pfp.png"
             alt="pfp"
-            width={160}
-            height={200}
-            quality={90}
-            sizes="160px"
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
           />
         </div>
