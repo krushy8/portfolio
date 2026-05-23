@@ -66,8 +66,10 @@ export default function Home() {
           <Image
             src="/pfp.png"
             alt="pfp"
-            width={80}
-            height={80}
+            width={160}
+            height={200}
+            quality={90}
+            sizes="160px"
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
           />
         </div>
