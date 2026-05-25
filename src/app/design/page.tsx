@@ -49,10 +49,9 @@ const DESIGN_PROJECTS = [
     tags: ["Logo Design"],
     image: "/expat-job-board.png",
     url: "https://expatjobboard.com/jobs/location/hong-kong",
-    height: "320px",
+    height: "180px",
     objectFit: "contain",
     objectPosition: "center",
-    scale: 1.3,
   },
   {
     id: 5,
@@ -126,13 +125,16 @@ export default function Design() {
                     height: project.height || "320px",
                     overflow: "hidden",
                     marginBottom: "1.25rem",
+                    position: "relative",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={1200}
-                    height={480}
+                    fill
                     quality={100}
                     style={{
                       objectFit: (project.objectFit || "cover") as
