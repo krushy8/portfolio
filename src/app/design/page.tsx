@@ -8,35 +8,57 @@ import React from "react";
 const DESIGN_PROJECTS = [
   {
     id: 1,
-    title: "Project Title",
-    description: "Short description of this design project.",
-    tags: ["Print", "Branding", "Illustration"],
-    year: "2025",
-    image: "/kevin_f.png",
+    title: "Kevin Williams- Drummer",
+    description: "Kevin is a US-based freelance drummer. I developed a bold, funky logo and business card that expresses his taste in a variety of music genres.",
+    tags: ["Print", "Logo Design"],
+    year: "2014",
+    image: "/business_card_2up.png",
+    url: "https://www.muratdiril.com/artist-details/kevin-williams.html",
   },
   {
     id: 2,
-    title: "Project Title",
-    description: "Short description of this design project.",
-    tags: ["Typography", "Poster"],
-    year: "2024",
-    image: "/design2.png",
+    title: "The Gallant Greyhound",
+    description: "The Gallant Greyhound is an independent shop that creates custom crocheted products mainly for dogs. The owner wanted to incorporate a rhythmic, whimsical logo using her own greyhound as the company mascot.",
+    tags: ["Print", "Logo Design"],
+    year: "2015",
+    image: "/tshirt.png",
+    url: "https://www.pinterest.com/thegallantgreyh/the-gallant-greyhound/",
   },
   {
     id: 3,
-    title: "Project Title",
-    description: "Short description of this design project.",
-    tags: ["Packaging", "Identity"],
-    year: "2024",
-    image: "/design3.png",
+    title: "Fugoose",
+    description: "I wanted to share my passion for cooking, how I make meals, and what I eat as a foreigner living in Japan. I wanted to create a fun, distinguishable mascot to represent the fusion of Japanese and English.",
+    tags: ["Logo Design", "Branding", "Video Editing"],
+    year: "2025",
+    image: "/fugoose.png",
+    url: "https://www.youtube.com/@Fugooseyt",
   },
+
+  {
+    id: 4,
+    title: "Expat Job Board",
+    description: "The owners developed an honest, straightforward job site to help expats find jobs with no surprises. I developed a logo to help capture the modern simplicity of their vision.",
+    tags: ["Logo Design"],
+    year: "2026",
+    image: "/expat-job-board.png",
+    url: "https://expatjobboard.com/jobs/location/hong-kong",
+  },
+  {
+    id: 5,
+    title: "Forkcast",
+    description: "My team wanted to build an app to help take the hassle out of meal planning. I developed a modern, fresh logo to tie together this colorful tool.",
+    tags: ["Logo Design"],
+    year: "2026",
+    image: "/forkcast.png",
+    url: "https://www.reciplan.org/",
+  }
 ];
 
 const COLLAGE_IMAGES: { src: string; alt: string; style: React.CSSProperties }[] = [
   { src: "/business_card_2up.png", alt: "Design sample 1", style: { gridColumn: "1 / 3", gridRow: "1 / 2" } },
-  { src: "/design2.png", alt: "Design sample 2", style: { gridColumn: "3 / 4", gridRow: "1 / 2" } },
-  { src: "/design3.png", alt: "Design sample 3", style: { gridColumn: "1 / 2", gridRow: "2 / 3" } },
-  { src: "/design4.png", alt: "Design sample 4", style: { gridColumn: "2 / 4", gridRow: "2 / 3" } },
+  { src: "/forkcast.png", alt: "Design sample 2", style: { gridColumn: "3 / 4", gridRow: "1 / 2" } },
+  { src: "/fugoose.png", alt: "Design sample 3", style: { gridColumn: "1 / 2", gridRow: "2 / 3" } },
+  { src: "/tshirt.png", alt: "Design sample 4", style: { gridColumn: "2 / 4", gridRow: "2 / 3" } },
 ];
 // ──────────────────────────────────────────────────────────────────────────────
 
@@ -47,7 +69,7 @@ export default function Design() {
     <div style={{ minHeight: "100vh", padding: "8rem 2.5rem 5rem" }}>
 
       {/* ── HERO: full width ── */}
-      <div style={{ maxWidth: "1200px", margin: "0 auto", marginBottom: "6rem" }}>
+      <div style={{ maxWidth: "1600px", margin: "0 auto", marginBottom: "6rem" }}>
 
         {/* Page label */}
         <p
@@ -102,10 +124,10 @@ export default function Design() {
                 marginBottom: "2.5rem",
               }}
             >
-              I work with businesses, creatives, and private clients to create
+              I help devoted people create
               remarkable graphics and tell stories.{" "}
               <em style={{ fontStyle: "italic", color: "var(--ink)" }}>
-                Vintage design is my specialty.
+                Logo design is my specialty.
               </em>
             </p>
 
