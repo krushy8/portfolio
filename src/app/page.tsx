@@ -151,7 +151,7 @@ export default function Home() {
               padding: "0.75rem 1.75rem",
               backgroundColor: "var(--rust)",
               color: "var(--cream)",
-              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
               fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.875rem",
               fontWeight: 500,
@@ -166,7 +166,31 @@ export default function Home() {
               ((e.target as HTMLElement).style.backgroundColor = "var(--rust)")
             }
           >
-            View Projects
+            Web Projects
+          </Link>
+          <Link
+            href="/design"
+            style={{
+              display: "inline-block",
+              padding: "0.75rem 1.75rem",
+              backgroundColor: "var(--rust)",
+              color: "var(--cream)",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+              textDecoration: "none",
+              letterSpacing: "0.02em",
+              transition: "background-color 0.2s ease",
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLElement).style.backgroundColor = "var(--muted)")
+            }
+            onMouseOut={(e) =>
+              ((e.target as HTMLElement).style.backgroundColor = "var(--rust)")
+            }
+          >
+            Graphic Design
           </Link>
           <Link
             href="/about"
@@ -175,7 +199,7 @@ export default function Home() {
               padding: "0.75rem 1.75rem",
               border: "1px solid var(--border)",
               color: "var(--rust)",
-              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.05)",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
               fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.875rem",
               fontWeight: 400,

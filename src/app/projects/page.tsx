@@ -50,19 +50,6 @@ export default function Projects() {
         margin: "0 auto",
       }}
     >
-      {/* Page label */}
-      <p
-        style={{
-          fontFamily: "'DM Mono', monospace",
-          fontSize: "0.7rem",
-          color: "var(--rust)",
-          letterSpacing: "0.15em",
-          textTransform: "uppercase",
-          marginBottom: "1.5rem",
-        }}
-      >
-        03 / Projects
-      </p>
 
       {/* Heading */}
       <h1
@@ -90,32 +77,12 @@ export default function Projects() {
               borderBottom: "1px solid var(--border)",
               padding: "2.5rem 0",
               display: "grid",
-              gridTemplateColumns: "3rem 1fr auto",
+              gridTemplateColumns: "1fr auto",
               gap: "2rem",
               alignItems: "start",
-              transition: "background-color 0.2s ease",
               cursor: "default",
             }}
-            onMouseOver={(e) =>
-              ((e.currentTarget as HTMLElement).style.backgroundColor =
-                "rgba(255,255,255,0.4)")
-            }
-            onMouseOut={(e) =>
-              ((e.currentTarget as HTMLElement).style.backgroundColor =
-                "transparent")
-            }
           >
-            {/* Index number */}
-            <span
-              style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "0.7rem",
-                color: "var(--muted)",
-                paddingTop: "0.25rem",
-              }}
-            >
-              {String(index + 1).padStart(2, "0")}
-            </span>
 
             {/* Content */}
             <div>
