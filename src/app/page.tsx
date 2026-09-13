@@ -99,9 +99,9 @@ export default function Home() {
             animation: "fadeUp 0.7s ease forwards 0.2s",
           }}
         >
-          Hi, I&apos;m{" "}
+          Katherine{" "}
           <em style={{ fontStyle: "italic", color: "var(--rust)" }}>
-            Katherine Rush
+            Rush
           </em>
           .
         </h1>
