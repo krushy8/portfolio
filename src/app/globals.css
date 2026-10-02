@@ -46,3 +46,7 @@ body::before {
   z-index: 9999;
   opacity: 0.4;
 }
+
+:lang(ja) em {
+  font-style: normal !important;
+}
