@@ -1,17 +1,29 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import React from "react";
+import { useLang, type Key } from "@/lib/i18n";
+
+type DesignProject = {
+  id: number;
+  title: string;
+  description: Key;
+  tags: Key[];
+  image: string;
+  url?: string;
+  height: string;
+  objectFit: "cover" | "contain";
+  objectPosition?: string;
+  scale?: number;
+  pdf?: string;
+};
 
 // ─── EDIT THIS SECTION ────────────────────────────────────────────────────────
-const DESIGN_PROJECTS = [
+const DESIGN_PROJECTS: DesignProject[] = [
   {
     id: 1,
     title: "Kevin Williams",
-    description:
-      "Kevin is a US-based freelance drummer. I developed a bold, funky logo and business card that expresses his taste in a variety of music genres.",
-    tags: ["Print", "Logo Design"],
+    description: "designDesc1",
+    tags: ["tagPrint", "tagLogoDesign"],
     image: "/business_card_2up.png",
     url: "https://www.muratdiril.com/artist-details/kevin-williams.html",
     height: "480px",
@@ -20,9 +32,8 @@ const DESIGN_PROJECTS = [
   {
     id: 2,
     title: "The Gallant Greyhound",
-    description:
-      "The Gallant Greyhound is an independent shop that creates custom crocheted products mainly for dogs. The owner wanted to incorporate a rhythmic, whimsical logo using her own greyhound as the company mascot.",
-    tags: ["Print", "Logo Design"],
+    description: "designDesc2",
+    tags: ["tagPrint", "tagLogoDesign"],
     image: "/tshirt.png",
     url: "https://www.pinterest.com/thegallantgreyh/the-gallant-greyhound/",
     height: "420px",
@@ -32,9 +43,8 @@ const DESIGN_PROJECTS = [
   {
     id: 3,
     title: "Fugoose",
-    description:
-      "I wanted to share my passion for cooking, how I make meals, and what I eat as a foreigner living in Japan. I wanted to create a fun, distinguishable mascot to represent the fusion of Japanese and English.",
-    tags: ["Logo Design", "Branding", "Video Editing"],
+    description: "designDesc3",
+    tags: ["tagLogoDesign", "tagBranding", "tagVideoEditing"],
     image: "/fugoose.png",
     url: "https://www.youtube.com/@Fugooseyt",
     height: "320px",
@@ -44,9 +54,8 @@ const DESIGN_PROJECTS = [
   {
     id: 4,
     title: "Expat Job Board",
-    description:
-      "The owners developed an honest, straightforward job site to help expats find jobs with no surprises. I developed a logo to help capture the modern simplicity of their vision.",
-    tags: ["Logo Design"],
+    description: "designDesc4",
+    tags: ["tagLogoDesign"],
     image: "/expat-job-board.png",
     url: "https://expatjobboard.com/jobs/location/hong-kong",
     height: "180px",
@@ -56,9 +65,8 @@ const DESIGN_PROJECTS = [
   {
     id: 5,
     title: "Forkcast",
-    description:
-      "My team wanted to build an app to help take the hassle out of meal planning. I developed a modern, fresh logo to tie together this colorful tool.",
-    tags: ["Logo Design"],
+    description: "designDesc5",
+    tags: ["tagLogoDesign"],
     image: "/forkcast_logo.png",
     url: "https://www.reciplan.org/",
     height: "240px",
@@ -67,8 +75,10 @@ const DESIGN_PROJECTS = [
     scale: 1.3,
   },
 ];
+// ──────────────────────────────────────────────────────────────────────────────
 
 export default function Design() {
+  const { t } = useLang();
 
   return (
     <div
@@ -91,16 +101,16 @@ export default function Design() {
           marginBottom: "3rem",
         }}
       >
-        Art &amp;
+        {t("designHeading1")}
         <br />
         <em style={{ fontStyle: "italic", color: "var(--rust)" }}>
-          Design.
+          {t("designHeading2")}
         </em>
       </h1>
 
       {/* Project list */}
       <div style={{ borderTop: "1px solid var(--border)" }}>
-        {DESIGN_PROJECTS.map((project, index) => (
+        {DESIGN_PROJECTS.map((project) => (
           <div
             key={project.id}
             style={{
@@ -113,8 +123,7 @@ export default function Design() {
               cursor: "default",
             }}
           >
-
-          <div />
+            <div />
 
             {/* Content */}
             <div style={{ minWidth: 0 }}>
@@ -137,11 +146,8 @@ export default function Design() {
                     fill
                     quality={100}
                     style={{
-                      objectFit: (project.objectFit || "cover") as
-                        | "cover"
-                        | "contain",
-                      objectPosition:
-                        project.objectPosition || "center",
+                      objectFit: project.objectFit,
+                      objectPosition: project.objectPosition || "center",
                       width: "100%",
                       height: "100%",
                       transform: project.scale
@@ -162,9 +168,7 @@ export default function Design() {
                   color: "var(--rust)",
                 }}
               >
-                <span style={{ color: "var(--rust)" }}>
-                  {project.title}
-                </span>
+                <span style={{ color: "var(--rust)" }}>{project.title}</span>
               </h2>
 
               <p
@@ -178,7 +182,7 @@ export default function Design() {
                   marginBottom: "1.25rem",
                 }}
               >
-                {project.description}
+                {t(project.description)}
               </p>
 
               <div
@@ -200,7 +204,7 @@ export default function Design() {
                       letterSpacing: "0.06em",
                     }}
                   >
-                    {tag}
+                    {t(tag)}
                   </span>
                 ))}
               </div>
@@ -230,15 +234,13 @@ export default function Design() {
                     transition: "color 0.2s ease",
                   }}
                   onMouseOver={(e) =>
-                    ((e.target as HTMLElement).style.color =
-                      "var(--rust)")
+                    ((e.target as HTMLElement).style.color = "var(--rust)")
                   }
                   onMouseOut={(e) =>
-                    ((e.target as HTMLElement).style.color =
-                      "var(--muted)")
+                    ((e.target as HTMLElement).style.color = "var(--muted)")
                   }
                 >
-                  Check them out ↗
+                  {t("designCheckOut")} ↗
                 </a>
               )}
 
@@ -256,15 +258,13 @@ export default function Design() {
                     transition: "color 0.2s ease",
                   }}
                   onMouseOver={(e) =>
-                    ((e.target as HTMLElement).style.color =
-                      "var(--rust)")
+                    ((e.target as HTMLElement).style.color = "var(--rust)")
                   }
                   onMouseOut={(e) =>
-                    ((e.target as HTMLElement).style.color =
-                      "var(--muted)")
+                    ((e.target as HTMLElement).style.color = "var(--muted)")
                   }
                 >
-                  Brand Guide ↗
+                  {t("designBrandGuide")} ↗
                 </a>
               )}
             </div>
@@ -287,7 +287,7 @@ export default function Design() {
           href="/about"
           style={{ color: "var(--rust)", textDecoration: "none" }}
         >
-          Get in touch ↗
+          {t("designGetInTouch")} ↗
         </a>
       </p>
     </div>
