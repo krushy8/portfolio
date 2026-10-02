@@ -1,30 +1,27 @@
 "use client";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 // ─── EDIT THIS SECTION ────────────────────────────────────────────────────────
 const ABOUT = {
   name: "Katherine Rush",
-  role: "Full-Stack Developer",
-  location: "Tokyo, Japan",
-  bio: [
-    "I'm a developer with a background in Ruby on Rails. I enjoy building things that are fast, clean, and actually useful.",
-    "Before coding, I studied Graphic Design. These days I spend most of my time working on projects useful in Japan and learning everything I can about modern web development.",
-    "When I'm not at my desk, you'll find me cooking, running, and taking care of my plants.",
-  ],
+  bio: ["aboutBio1", "aboutBio2", "aboutBio3"],
   skills: [
-    { category: "Languages", items: ["Ruby", "JavaScript", "TypeScript", "HTML", "CSS"] },
-    { category: "Frameworks", items: ["Ruby on Rails", "React", "Next.js", "Tailwind"] },
-    { category: "Tools", items: ["Git", "PostgreSQL", "Vercel", "Figma", "Adobe Illustrator", "Adobe Photoshop"] },
+    { category: "skillsLanguages", items: ["Ruby", "JavaScript", "TypeScript", "HTML", "CSS"] },
+    { category: "skillsFrameworks", items: ["Ruby on Rails", "React", "Next.js", "Tailwind"] },
+    { category: "skillsTools", items: ["Git", "PostgreSQL", "Vercel", "Figma", "Adobe Illustrator", "Adobe Photoshop"] },
   ],
   links: [
     { label: "GitHub", url: "https://github.com/krushy8" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/krushy8/" },
     { label: "Email", url: "mailto:rushkatheriney@gmail.com" },
   ],
-};
+} as const;
 // ──────────────────────────────────────────────────────────────────────────────
 
 export default function About() {
+  const { t } = useLang();
+
   return (
     <div
       style={{
@@ -45,7 +42,7 @@ export default function About() {
           marginBottom: "1.5rem",
         }}
       >
-        02 / About
+        02 / {t("about")}
       </p>
 
       {/* Heading */}
@@ -60,9 +57,11 @@ export default function About() {
           marginBottom: "3rem",
         }}
       >
-        A bit about
+        {t("aboutHeading1")}
         <br />
-        <em style={{ fontStyle: "italic", color: "var(--rust)" }}>who I am.</em>
+        <em style={{ fontStyle: "italic", color: "var(--rust)" }}>
+          {t("aboutHeading2")}
+        </em>
       </h1>
 
       <div
@@ -86,11 +85,11 @@ export default function About() {
               marginBottom: "1.5rem",
             }}
           >
-            Background
+            {t("aboutBackground")}
           </h2>
-          {ABOUT.bio.map((paragraph, i) => (
+          {ABOUT.bio.map((key) => (
             <p
-              key={i}
+              key={key}
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1rem",
@@ -100,7 +99,7 @@ export default function About() {
                 marginBottom: "1.25rem",
               }}
             >
-              {paragraph}
+              {t(key)}
             </p>
           ))}
 
@@ -137,7 +136,7 @@ export default function About() {
                 {label === "GitHub" && <Github size={14} />}
                 {label === "LinkedIn" && <Linkedin size={14} />}
                 {label === "Email" && <Mail size={14} />}
-                {label}
+                {label === "Email" ? t("aboutEmail") : label}
               </a>
             ))}
           </div>
@@ -155,7 +154,7 @@ export default function About() {
               marginBottom: "1.5rem",
             }}
           >
-            Skills
+            {t("aboutSkills")}
           </h2>
 
           {ABOUT.skills.map(({ category, items }) => (
@@ -170,7 +169,7 @@ export default function About() {
                   letterSpacing: "0.02em",
                 }}
               >
-                {category}
+                {t(category)}
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
                 {items.map((item) => (
@@ -210,11 +209,11 @@ export default function About() {
                 lineHeight: 2,
               }}
             >
-              Role — {ABOUT.role}
+              {t("aboutRoleLabel")} — {t("aboutRole")}
               <br />
-              Location — {ABOUT.location}
+              {t("aboutLocationLabel")} — {t("aboutLocation")}
               <br />
-              Status — Available for work
+              {t("aboutStatusLabel")} — {t("available")}
             </p>
           </div>
         </div>
