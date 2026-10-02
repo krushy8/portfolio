@@ -15,6 +15,9 @@ const dict = {
     webProjects: "Web Projects",
     graphicDesign: "Graphic Design",
     aboutMe: "About Me",
+    nameFirst: "Katherine ",
+    nameLast: "Rush",
+    nameEnd: ".",
 
     // About page
     aboutHeading1: "A bit about",
@@ -83,6 +86,9 @@ const dict = {
     webProjects: "Webプロジェクト",
     graphicDesign: "グラフィックデザイン",
     aboutMe: "自己紹介",
+    nameFirst: "キャサリン・",
+    nameLast: "ラッシュ",
+    nameEnd: "",
 
     // About page
     aboutHeading1: "私について、",

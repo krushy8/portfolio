@@ -6,7 +6,7 @@ import { useLang } from "@/lib/i18n";
 
 export default function Home() {
   const lineRef = useRef<HTMLDivElement>(null);
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   useEffect(() => {
     // Animate the horizontal rule on load
@@ -100,11 +100,16 @@ export default function Home() {
             animation: "fadeUp 0.7s ease forwards 0.2s",
           }}
         >
-          Katherine{" "}
-          <em style={{ fontStyle: "italic", color: "var(--rust)" }}>
-            Rush
+          {t("nameFirst")}
+          <em
+            style={{
+              fontStyle: lang === "ja" ? "normal" : "italic",
+              color: "var(--rust)",
+            }}
+          >
+            {t("nameLast")}
           </em>
-          .
+          {t("nameEnd")}
         </h1>
 
         {/* Divider line */}
