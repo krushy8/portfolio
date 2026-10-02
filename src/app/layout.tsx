@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import { LangProvider } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Katherine Rush — Developer",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Nav />
-        <main>{children}</main>
+        <LangProvider>
+          <Nav />
+          <main>{children}</main>
+        </LangProvider>
       </body>
     </html>
   );
