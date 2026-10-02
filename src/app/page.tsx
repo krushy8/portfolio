@@ -90,7 +90,7 @@ export default function Home() {
         <h1
           style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(3rem, 8vw, 7rem)",
+            fontSize: lang === "ja" ? "clamp(2.5rem, 7vw, 5.5rem)" : "clamp(3rem, 8vw, 7rem)",
             fontWeight: 400,
             lineHeight: 1.05,
             letterSpacing: "-0.03em",
