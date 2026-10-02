@@ -57,6 +57,18 @@ const dict = {
       "The owners developed an honest, straightforward job site to help expats find jobs with no surprises. I developed a logo to help capture the modern simplicity of their vision.",
     designDesc5:
       "My team wanted to build an app to help take the hassle out of meal planning. I developed a modern, fresh logo to tie together this colorful tool.",
+
+    // Projects page
+    projectsHeading1: "Things I've",
+    projectsHeading2: "built.",
+    projectsLive: "Live",
+    projectsMoreOn: "More on",
+    projectDesc1:
+      "A meal planning web app designed to make weekly cooking simple and stress-free.",
+    projectDesc2:
+      "A fun, decision-based role-playing game, where you can create your own character and story or leave it up to AI to take you on a journey.",
+    projectDesc3:
+      "A developer-focused typing speed test. Choose a language, type real code snippets, and track your WPM, CPM, and accuracy.",
   },
   ja: {
     // Nav + home
@@ -113,6 +125,18 @@ const dict = {
       "オーナーの方々は、予想外のことが起きない、誠実でわかりやすい求人サイトを立ち上げ、外国人の仕事探しをサポートしています。そのモダンでシンプルなビジョンを表現するロゴを制作しました。",
     designDesc5:
       "私のチームは、献立づくりの手間を省くアプリを作りたいと考えていました。このカラフルなツールをまとめ上げる、モダンで新鮮なロゴを制作しました。",
+
+    // Projects page
+    projectsHeading1: "これまでに作った",
+    projectsHeading2: "ものたち。",
+    projectsLive: "公開サイト",
+    projectsMoreOn: "その他はこちら:",
+    projectDesc1:
+      "毎週の料理をシンプルで気楽なものにするために作った、献立プランニングのWebアプリです。",
+    projectDesc2:
+      "選択によって物語が進む、楽しいロールプレイングゲームです。自分でキャラクターやストーリーを作ることも、AIに任せて冒険に出ることもできます。",
+    projectDesc3:
+      "開発者向けのタイピング速度テストです。言語を選び、実際のコードスニペットを入力して、WPM、CPM、正確さを記録できます。",
   },
 } as const;
 

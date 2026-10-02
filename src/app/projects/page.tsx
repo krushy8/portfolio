@@ -1,14 +1,25 @@
 "use client";
 
 import Image from "next/image";
+import { useLang, type Key } from "@/lib/i18n";
+
+type Project = {
+  id: number;
+  title: string;
+  description: Key;
+  tags: string[];
+  year: string;
+  url: string;
+  live?: string;
+  image?: string;
+};
 
 // ─── EDIT THIS SECTION ────────────────────────────────────────────────────────
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Forkcast",
-    description:
-      "A meal planning web app designed to make weekly cooking simple and stress-free.",
+    description: "projectDesc1",
     tags: ["Rails", "Hotwire", "Ajax", "SweetAlert", "SortableJS", "Figma"],
     year: "2026",
     url: "https://github.com/cledx/Forkcast",
@@ -18,8 +29,7 @@ const PROJECTS = [
   {
     id: 2,
     title: "A&D",
-    description:
-      "A fun, decision-based role-playing game, where you can create your own character and story or leave it up to AI to take you on a journey.",
+    description: "projectDesc2",
     tags: ["Rails", "Stimulus JS", "Heroku", "PostgreSQL", "Bootstrap", "Figma"],
     year: "2026",
     url: "https://github.com/cledx/A_n_D",
@@ -29,18 +39,19 @@ const PROJECTS = [
   {
     id: 3,
     title: "devtype",
-    description:
-      "A developer-focused typing speed test. Choose a language, type real code snippets, and track your WPM, CPM, and accuracy.",
+    description: "projectDesc3",
     tags: ["React", "Typescript", "Tailwind", "Vite"],
     year: "2026",
     url: "https://github.com/krushy8/devtype",
     live: "https://devtype-sand.vercel.app/",
-    image: "/devtype.png", //
+    image: "/devtype.png",
   },
 ];
 // ──────────────────────────────────────────────────────────────────────────────
 
 export default function Projects() {
+  const { t } = useLang();
+
   return (
     <div
       style={{
@@ -50,7 +61,6 @@ export default function Projects() {
         margin: "0 auto",
       }}
     >
-
       {/* Heading */}
       <h1
         style={{
@@ -63,14 +73,16 @@ export default function Projects() {
           marginBottom: "3rem",
         }}
       >
-        Things I&apos;ve
+        {t("projectsHeading1")}
         <br />
-        <em style={{ fontStyle: "italic", color: "var(--rust)" }}>built.</em>
+        <em style={{ fontStyle: "italic", color: "var(--rust)" }}>
+          {t("projectsHeading2")}
+        </em>
       </h1>
 
       {/* Project list */}
       <div style={{ borderTop: "1px solid var(--border)" }}>
-        {PROJECTS.map((project, index) => (
+        {PROJECTS.map((project) => (
           <div
             key={project.id}
             style={{
@@ -83,7 +95,6 @@ export default function Projects() {
               cursor: "default",
             }}
           >
-
             {/* Content */}
             <div>
               {/* Screenshot */}
@@ -152,7 +163,7 @@ export default function Projects() {
                   marginBottom: "1.25rem",
                 }}
               >
-                {project.description}
+                {t(project.description)}
               </p>
 
               {/* Tags */}
@@ -235,7 +246,7 @@ export default function Projects() {
                     ((e.target as HTMLElement).style.color = "var(--muted)")
                   }
                 >
-                  Live ↗
+                  {t("projectsLive")} ↗
                 </a>
               )}
             </div>
@@ -253,7 +264,7 @@ export default function Projects() {
           letterSpacing: "0.05em",
         }}
       >
-        More on{" "}
+        {t("projectsMoreOn")}{" "}
         <a
           href="https://github.com/krushy8"
           target="_blank"

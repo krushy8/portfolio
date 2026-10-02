@@ -1,11 +1,12 @@
 "use client";
-import Image from "next/image";
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { useLang } from "@/lib/i18n";
 
 export default function Home() {
   const lineRef = useRef<HTMLDivElement>(null);
+  const { t } = useLang();
 
   useEffect(() => {
     // Animate the horizontal rule on load
@@ -46,7 +47,7 @@ export default function Home() {
           paddingTop: "5rem",
         }}
       >
-        Available for work
+        {t("available")}
       </div>
 
       {/* Main hero content */}
@@ -82,7 +83,7 @@ export default function Home() {
             animation: "fadeUp 0.6s ease forwards 0.1s",
           }}
         >
-          Developer & Builder
+          {t("role")}
         </p>
 
         {/* Big headline */}
@@ -131,7 +132,7 @@ export default function Home() {
             animation: "fadeUp 0.7s ease forwards 0.5s",
           }}
         >
-          Full-stack developer with a background in Rails. I like building useful things with clean visuals.
+          {t("intro")}
         </p>
 
         {/* CTAs */}
@@ -166,7 +167,7 @@ export default function Home() {
               ((e.target as HTMLElement).style.backgroundColor = "var(--rust)")
             }
           >
-            Web Projects
+            {t("webProjects")}
           </Link>
           <Link
             href="/design"
@@ -190,7 +191,7 @@ export default function Home() {
               ((e.target as HTMLElement).style.backgroundColor = "var(--rust)")
             }
           >
-            Graphic Design
+            {t("graphicDesign")}
           </Link>
           <Link
             href="/about"
@@ -216,7 +217,7 @@ export default function Home() {
               (e.target as HTMLElement).style.color = "var(--rust)";
             }}
           >
-            About Me
+            {t("aboutMe")}
           </Link>
         </div>
       </div>
@@ -233,7 +234,7 @@ export default function Home() {
           letterSpacing: "0.08em",
         }}
       >
-        01 / Home
+        01 / {t("home")}
       </div>
 
       <style>{`
