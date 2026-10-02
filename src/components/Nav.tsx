@@ -3,16 +3,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useLang } from "@/lib/i18n";
+import LangToggle from "@/components/LangToggle";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/design", label: "Design" },
-];
+  { href: "/", key: "home" },
+  { href: "/about", key: "about" },
+  { href: "/projects", key: "projects" },
+  { href: "/design", key: "design" },
+] as const;
 
 export default function Nav() {
   const pathname = usePathname();
+  const { t } = useLang();
 
   return (
     <nav
@@ -52,27 +55,30 @@ export default function Nav() {
         />
       </Link>
 
-      {/* Links */}
-      <ul style={{ display: "flex", gap: "2rem", listStyle: "none" }}>
-        {links.map(({ href, label }) => (
-          <li key={href}>
-            <Link
-              href={href}
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "0.875rem",
-                fontWeight: pathname === href ? 500 : 400,
-                color: pathname === href ? "var(--rust)" : "var(--muted)",
-                textDecoration: "none",
-                letterSpacing: "0.02em",
-                transition: "color 0.2s ease",
-              }}
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {/* Links + language toggle */}
+      <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+        <ul style={{ display: "flex", gap: "2rem", listStyle: "none" }}>
+          {links.map(({ href, key }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.875rem",
+                  fontWeight: pathname === href ? 500 : 400,
+                  color: pathname === href ? "var(--rust)" : "var(--muted)",
+                  textDecoration: "none",
+                  letterSpacing: "0.02em",
+                  transition: "color 0.2s ease",
+                }}
+              >
+                {t(key)}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <LangToggle />
+      </div>
     </nav>
   );
 }
